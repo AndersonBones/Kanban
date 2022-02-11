@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="shortcut icon" href="./letter-k_icon.png" >
+
+    <link href="https://fonts.googleapis.com/css2?One&family=Quicksand:wght@300&family=Raleway:wght@100&family=Varela+Round&display=swap" rel="stylesheet">
+    <script src="./main.js" defer></script>
+
+    <title>Kanban</title>
+
+</head>
+<body>
+
+    <div class="Color-Title_container">
+        <div class="input-card">
+            <div class="color-title_card">
+
+                <div class="title-card">
+                    <label for="title-card">Title Card</label>
+                    <input autocomplete="off" type="text" id="title-card">
+                </div>
+                
+                <div class="color-card">
+                    <label for="color-card">Color Card</label>
+                    <input inputmode="off" type="color" id="color-card" value="#B3D41C">
+                </div>
+                
+
+            </div>
+            <div class="btn-confirm_cancel">
+                <button>CANCEL</button>
+                <button>CONFIRM</button>
+            </div>
+            
+        </div>
+    </div>
+
+    <header>
+
+        <h2>Kanban App</h2>
+        <button class="addCardBoard-btn">ADD CARD</button>
+
+    </header>
+
+    
+    <section class="container">
+        
+        <div class="MoveTaskToCard-container">
+            <div class="choice-card">
+                <p>Choose which card the task will be moved to</p>
+                <div class="card-list-container">
+                
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+
+            <div class="NameTask-container">
+
+                <div class="input-name">
+                    <div class="div1">
+                        <label>Texto da Nota</label>
+                        <input type="text" class="input-nameCard">
+                    </div>
+                    
+                    
+                    <div class="div2">
+                        <button class="cancel-btn">CANCEL</button>
+                        <button class="confirm-btn">CONFIRM</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <h3 class="card-title">To do</h3>
+
+            <p class="no-task">No tasks added</p>
+
+            <div class="task-list"></div>
+    
+            <button class="add-task"><i class="material-icons">add</i> ADD TASK</button>
+
+        </div>
+
+        <div class="card-container doing-card ">
+
+            <div class="NameTask-container">
+
+                <div class="input-name">
+                    <div class="div1">
+                        <label>Texto da Nota</label>
+                        <input type="text" class="input-nameCard">
+                    </div>
+                    
+                    
+                    <div class="div2">
+                        <button class="cancel-btn">CANCEL</button>
+                        <button class="confirm-btn">CONFIRM</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <h3 class="card-title">Doing</h3>
+
+            <p class="no-task">No tasks added</p>
+
+            <div class="task-list"></div>
+    
+            <button class="add-task"><i class="material-icons">add</i> ADD TASK</button>
+
+        </div>
+
+        <div class="card-container done-card">
+
+            <div class="NameTask-container">
+
+                <div class="input-name">
+                    <div class="div1">
+                        <label>Texto da Nota</label>
+                        <input type="text" class="input-nameCard">
+                    </div>
+                    
+                    
+                    <div class="div2">
+                        <button class="cancel-btn">CANCEL</button>
+                        <button class="confirm-btn">CONFIRM</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <h3 class="card-title">Done</h3>
+
+            <p class="no-task">No tasks added</p>
+
+            <div class="task-list"></div>
+    
+            <button class="add-task"><i class="material-icons">add</i> ADD TASK</button>
+
+        </div>
+
+    </section>
+
+    <footer><p>Copyright ©2022 All rights reserved | by <a href="#">AndersonBones</a> </p></footer>
+    
+</body>
+</html>
