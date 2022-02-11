@@ -94,7 +94,7 @@ function CreatTask(taskList){
     div1.classList.add('div1');
 
     let label = document.createElement('label');
-    label.innerText = 'Texto da Nota';
+    label.innerText = 'Task Name';
 
     let input = document.createElement('input');
     input.type = 'text';
@@ -188,6 +188,7 @@ function AddRenameTask(task){
     let input_rename = task.parentElement.children[2].children[0].children[0].children[1];
     let task_tot = localStorage.getItem('task_total'); /* recupera o numero de total de tasks armazenado no localStorage */
     
+
     if(input_rename.value == ''){
         task.innerText = 'task #'+parseInt(task_tot);
         input_rename.value = '';
@@ -325,7 +326,7 @@ function ConfirmMoveTask_ToCard(){  /* Confirma o movimento da task para outro c
 }
 
 
-add_card.addEventListener('click', Card_Title_Name);
+add_card.addEventListener('click', Card_Title_Color);
 
 function CreatCard(MoveToCard){ /* Cria um novo card */
 
@@ -388,8 +389,6 @@ function CreatCard(MoveToCard){ /* Cria um novo card */
     let card_title = document.createElement('h3');
     card_title.classList.add('card-title');
 
-    AddNameCard(card_title, title_card); /* Define o nome card */
-
     let remove_card_btn = document.createElement('button');
     remove_card_btn.classList.add('remove_card-btn');
     remove_card_btn.innerHTML = '<b class="bi bi-x-circle"></b>';
@@ -424,14 +423,34 @@ function CreatCard(MoveToCard){ /* Cria um novo card */
     
     container.appendChild(card_container);
     
+    AddNameCard(card_title, title_card); /* Define o nome card */
 }
 
 
-function AddNameCard(card, title){ /* Define o nome do card */
-    let total_card = localStorage.getItem('card_total');
+
+
+function ConfirmCreatCard(){ /* confirma a criação do card */
+    let ColorTitle_container = this.parentElement.parentElement.parentElement;
+    ColorTitle_container.classList.remove('active-color_title-card');
+
+    CreatCard(ColorTitle_container);
+}
+
+function CancelCreatCard(){ /* cancela a cração do card */
+    let ColorTitle_container = this.parentElement.parentElement.parentElement;
+    ColorTitle_container.classList.remove('active-color_title-card');
+}
+
+function AddColorCard(card, color){ /* define a cor do card */
+    card.style.backgroundColor = color.value;
+}
+
+
+function AddNameCard(card, title){ /* adiciona um nome ao card */
+    let cardTot = localStorage.getItem("card_total");
 
     if(title.value == ''){
-        card.innerText = 'Card #'+total_card;
+        card.innerText = "Card #"+cardTot;
         title.value = '';
     }
     else{
@@ -441,25 +460,7 @@ function AddNameCard(card, title){ /* Define o nome do card */
 
 }
 
-function AddColorCard(card, color){
-    card.style.backgroundColor = color.value;
-    card.style.backgroundColor = '#B3D41C';
-}
-
-
-function ConfirmCreatCard(){
-    let ColorTitle_container = this.parentElement.parentElement.parentElement;
-    ColorTitle_container.classList.remove('active-color_title-card');
-
-    CreatCard(ColorTitle_container);
-}
-
-function CancelCreatCard(){
-    let ColorTitle_container = this.parentElement.parentElement.parentElement;
-    ColorTitle_container.classList.remove('active-color_title-card');
-}
-
-function Card_Title_Name(){ 
+function Card_Title_Color(){  /* abre a janela de escolha de nome e cor do card */
     let ColorTitle_container = this.parentElement.previousSibling.previousSibling;
     ColorTitle_container.classList.add('active-color_title-card'); /* abre a janela de escolha do nome e da cor do novo card */
 
@@ -474,8 +475,8 @@ function Card_Title_Name(){
 function RemoveCard(){ /* Remove o card */
     cardTotal-=1;
 
-    if(cardTotal <= 0){
-        cardTotal = 1;
+    if(cardTotal < 0){
+        cardTotal = 0;
     }
 
     localStorage.setItem('card_total', cardTotal);
@@ -515,7 +516,8 @@ function RestoreKanban(){ /* Restaura o estado anterior do Kanban */
     var move_task = document.getElementsByClassName('buttonCard');
     var remove_task = document.getElementsByClassName('remove-task');
 
-    if(container !=  null){
+    /* captura eventos dos elementos restaurados do localStorage */
+    if(container !=  null){ 
         cont.innerHTML = container;
 
         for(var btn of addtask){

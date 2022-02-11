@@ -165,10 +165,9 @@ header button:hover{
     display: flex;  
     align-content: flex-start;
     align-items: flex-start;
-    flex-wrap: wrap;
     gap: 3px;
-    padding: 20px;
-    
+    padding: 15px;
+    flex-wrap: wrap;
     margin: auto;
     margin-top: 50px;
     background-color: rgb(51 65 85 / 1);
