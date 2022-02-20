@@ -16,6 +16,6 @@ conhecidos como post-it — e também recebe o nome de gestão visual, em razão
 
 
 ## ● ScreenShots 🖼️
-<img src="./Assets/animação.gif">
+<img src="./animação.gif">
 
 ● <a href='https://andersonbones.github.io/Kanban/'>DEMO 👽</a>
