@@ -499,5 +499,10 @@ footer > p{
         align-items: center;
         flex-direction: column;
         flex-wrap: nowrap;
+        
+    }
+    
+    header{
+        gap: 30px;
     }
 }
