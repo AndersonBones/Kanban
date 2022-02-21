@@ -1,0 +1,7 @@
+#HTML - esqueleto do site, a coluna vertebral e os membros inferiores e superiores,
+
+#css - A pele, o cabelo, o contorno do corpo.
+
+#Javascript - A alma do site o que faz todo corpo já montado ter a interação com os outros.
+
+#computação #programação #programmer #programming #coding #100daysofcode #learnprogramming #javascript #cienciadacomputacao #engenhariadecomputaçao #sistemasdeinformação #typescript #reactjs #angularjs #tecnologiadainformação #frontend #souprogramador #programador #soudev #programadores
